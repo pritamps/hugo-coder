@@ -10,6 +10,9 @@
     {{ end }}
     <h1>{{ .Site.Params.author }}</h1>
     <h2>{{ .Site.Params.info }}</h2>
+    <div class="action_button">
+      <a href="{{ .Site.Params.action_button_link }}">{{ .Site.Params.action_button_text }}</a>
+    </div>
     {{ with .Site.Params.social }}
     <ul>
       {{ range sort . "weight" }}
