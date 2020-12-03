@@ -1,8 +1,15 @@
 <section class="container page">
   <article>
     <header>
-      <h1>{{ .Title }}</h1>
+      <h1 style="text-align: center;">{{ .Title }}</h1>
     </header>
+
+    <div>
+      {{ if .Params.featured_image }}
+        <img src='{{ .Params.featured_image }}' alt="Featured image"/>
+      {{ end }}
+      {{ .Content }}
+    </div>
 
     {{ .Content }}
   </article>
