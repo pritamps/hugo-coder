@@ -1,0 +1,38 @@
+.container_team_member {
+    
+    display: flex;
+    
+    :first-child {
+        width: 300px;
+    }
+    
+    :last-child {
+        width: 100%;
+    }
+
+    .photo_and_name 
+    {   
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+        text-align: center;
+        width: 300px;
+        margin: 2.0rem 2rem 2.0rem 0rem;
+        align-items: center;
+        
+        img {
+            border-radius: 50%;
+            aspect-ratio: 1;            
+        }
+        
+        .title {
+            font-size: 1.4em;            
+        }
+        .jobtitle {
+            font-size: 0.9em;
+        }
+
+        
+    }
+}

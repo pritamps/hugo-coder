@@ -1,0 +1,40 @@
+{{ define "title" }}
+    {{- if eq .Kind "taxonomy" -}}
+        {{- i18n .Data.Singular | title -}}
+        {{- print ": " -}}
+    {{- end -}}
+
+    {{- .Title }} · {{ .Site.Title -}}
+{{ end }}
+
+{{ define "content" }}
+    <section class="container list">
+        <h1 class="title">
+            {{- if eq .Kind "taxonomy" -}}
+                {{- i18n .Data.Singular | title -}}
+                {{- print ": " -}}
+                {{- end -}}
+            {{- .Title -}}
+        </h1>
+        {{ .Content }}
+        <div class="team_list">
+            <ul>
+                {{ range .Paginator.Pages }}
+                <li>
+                    <div class="container_team_member">
+                        <div class="photo_and_name">
+                            <img class="profile_image" src="{{ .Params.image }} " alt="">
+                            <div class="title" href="{{ .Params.ExternalLink | default .RelPermalink }}">{{ .Title }}</div>
+                            <div class="jobtitle"> {{ .Params.jobtitle }} </div>
+                        </div>
+                        <div class="profile_text">
+                            {{ .Content }}
+                        </div>
+                    </div>
+                </li>
+                {{ end }}
+            </ul>
+        </div>  
+        {{ partial "pagination.html" . }}
+    </section>
+{{ end }}
