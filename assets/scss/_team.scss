@@ -1,5 +1,7 @@
-.container_team_member {
+.team_list {
     
+.container_team_member {
+    max-width: 90rem;
     display: flex;
     
     :first-child {
@@ -36,3 +38,4 @@
         
     }
 }
+}   
